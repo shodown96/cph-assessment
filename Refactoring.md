@@ -9,3 +9,6 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+- Firstly, the `TRIVIAL_PARTITION_KEY` is an unnecessary variable as its value `0` could be assigned to candidate initially.
+- Secondly, the previous algorithm checks for if the candidate is true too often. Indirectly or directly.
+From line 17 - 23, the entire codeblock can be removed since its just checking if the candidate exists. We can compute all thatin the codeblock from 8-9, this will check if the candidate is a string and stringigy event.partitionKey which is still the candidiate as defined in line 10.
