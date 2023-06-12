@@ -22,13 +22,12 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 **Acceptance criteria:**
 As a frontend developer, I should be recieve an extra `id_by_facility` that comes with every agent related API endpoint the application interacts with.
 
-**Implementation:** 
-- There should be an extra field called `id_by_facility` attached to the model of every Agent, this is the field that would be used to assign custom ID's by the facilities to every Agent that works for them.
+**Implementation:**   
+- Considering that each Agent already has an internal database ID assigned to them, it is recommended to include an extra field called `id_by_facility` in the `Agent` model. This additional field will provide facilities with the capability to assign custom IDs to each Agent working for them.
 
-- As the Agents are being serialized, the `id_by_facility` field should also be serialized. 
-Moving unto their initial values, they should be left as empty or null initially and they would be added once a faility has hired the considered agent. So when Agents are being listed in any endpoint, the `id_by_facility` fields should either read null or the actual ids.
+- During the serialization process of the Agents, it is important to include the serialization of the `id_by_facility` field. Initially, the values of this field should be left as empty or null. These values will be populated once a facility hires the respective Agent. When listing Agents in any endpoint, the `id_by_facility` fields should either display null or the actual assigned IDs.
 
-- When an Agent is being hired. The endpoint responsible for this should also be expecting `id_by_facility` so that it can be attached to the Agent as he or she is being hired. If at any point in time, they decide to terminate the contract with a particular Agent, they can simply remove the ID.
+- When hiring an Agent, the corresponding endpoint should anticipate the presence of `id_by_facility` so that it can be associated with the Agent during the hiring process. In the event that a facility decides to terminate the contract with a specific Agent, they can simply remove the ID associated with that Agent.
 
 
 ## How is each Custom Agent ID is generated
