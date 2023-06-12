@@ -46,7 +46,7 @@ a facility should be able to view and change the custom IDs assigned to each Age
 This function should run everytime the facility (whoever handles the Agent's information in the hiring facility) stops typing when inputting a value for the custom ID (`id_by_facility`).
 
 **Note:** 
-Only facility related information should be editable by the facility and only necessary information should the facility be able to view.
+The facility should have the ability to edit only the information relevant to them, specifically related to the facility. Additionally, the facility should be granted access to view only the necessary information.
 
 
 ## How the Custom Agent IDs should be rendered in the reports
