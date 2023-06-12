@@ -10,5 +10,15 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 ## Your Explanation Here
 - Firstly, the `TRIVIAL_PARTITION_KEY` is an unnecessary variable as its value `0` could be assigned to candidate initially.
-- Secondly, the previous algorithm checks for if the candidate is true too often. Indirectly or directly.
-From line 17 - 23, the entire codeblock can be removed since its just checking if the candidate exists. We can compute all thatin the codeblock from 8-9, this will check if the candidate is a string and stringigy event.partitionKey which is still the candidiate as defined in line 10.
+- Secondly, the previous algorithm checks for if the candidate is true too frequently. Indirectly or directly.
+
+## The new solution
+The variable `candidate` is initialized to `0`. Therefore, there's no need for `TRIVIAL_PARTITION_KEY`.
+We can combine the two condition statements (line 8-9 of the old code) into one.
+We can also use a ternary operator to check if the candidate is a string or not, if its a string, we can assign it to be `JSON.stringify(event.partitionKey)` else, we can assign it to ` event.partitionKey`.
+As for the else statement following this condition, we need to still to check if there's an event at least.
+if there is, it goes on the with its normal statements.
+The codeblock spanning from line 17 - 23 of the old code has been rendered useless since all of its use cases have been captured by the previous conditional statements
+If there's no candidate, setting it to `TRIVIAL_PARTITION_KEY` which is `0` which is the initial value of `candidate` is useless.
+As for the other `if` section, we've handled that in line 9 of the refactored code
+The last conditional statement doesn't have to be changed.
