@@ -24,3 +24,5 @@ if there is, it goes on the with its normal statements.
 The codeblock spanning from line 17 - 23 of the old code has been rendered useless since all of its use cases have been captured by the previous conditional statements. If there's no candidate, setting it to `TRIVIAL_PARTITION_KEY` which is `0` which is the initial value of `candidate` is useless.
 As for the other `if` section, we've handled that in line 9 of the refactored code
 The last conditional statement doesn't have to be changed.
+
+Lasty, we can also create a function to handle the creation of hashes so as to reduce repetition.
